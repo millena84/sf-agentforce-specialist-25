@@ -380,7 +380,7 @@ Ou seja, podem ser criados agentes relacionados a toda cloud salesforce (inclusi
 Chamada **Agentforce 360 Platform**, a arquitetura é dividida em camadas principais, com o **Einstein Trust Layer** integrado em todas para garantir segurança, privacidade (zero retenção de dados, mascaramento de PII, detecção de toxicidade) e grounding em dados confiáveis durante prompts e respostas.
 
 <center>
-<img src="./imgs/D01-arquit-base-Agentforce360Platform.png" width="70%" alt="Pilares Agentforce 360 Platform">
+<img src="./img/D01-arquit-base-Agentforce360Platform.png" width="70%" alt="Pilares Agentforce 360 Platform">
 <figcaption><b>Pilares Agentforce 360 Platform</b></figcaption>
 </center>
 <br>
@@ -518,11 +518,10 @@ Tudo isso garantindo que:
 
 ##### Lembra dos conceitos?
 
-<center>
-<img src="https://media.licdn.com/dms/image/v2/D4E22AQEFofba4P-bCA/feedshare-shrink_2048_1536/B4EZRBYZSgGcAo-/0/1736263711388?e=1774483200&v=beta&t=JNljGRPUJykD44YarkaRljorftzFxn8sODYQJRiocAE" width="70%" alt="Ecossistema Agentforce e Conceitos de IA">
-<figcaption><b>Ecossistema Agentforce e Conceitos de IA</b></figcaption>
-</center>
-<br>
+<div align="center">
+  <img src="./img/D01-arquit-base-Agentforce360Platform.png" width="70%" alt="Pilares Agentforce 360 Platform">
+  <p><strong>Pilares Agentforce 360 Platform</strong></p>
+</div>
 
 - Chunk: Transformar um documento grande/não-estruturado em pedaços menores e gerenciáveis 
 - Embed: Transformar o texto do chunk em números (embedding) que capturam o significado semântico.
@@ -552,7 +551,7 @@ Aqui vamos mostrar estruturas do agente x onde se encontram no setup *sem explic
 <!-- >**speech:** Esta é uma developer edition que uso para testar features do agentforce para tentar entender como as coisas se conectam de fato; Uma vez acessando o setup, considerando que sua organização está apta para usar o Agentforce (ou seja, já foi tudo habilitado), é só digitar Agent no Quick find, ou ainda no waffle menu, buscar por Agentforce studio caso você já tenha agentes ativos (não é meu caso aqui?). -->
 
 Encontrando o Agentforce studio no Setup:
-![Setup > Agentforce Studio > Agentforce Agents](./imgs/D01-setup-01-AgentforceStudio-AgentforceAgents.png)
+![Setup > Agentforce Studio > Agentforce Agents](./img/D01-setup-01-AgentforceStudio-AgentforceAgents.png)
 
 Obs:. futuramente será no Agentforce Builder (ainda não disponível para os reles mortais, *risos*). 
 De forma resumida, existem diversos tipos de Agentes que podem ser criados numa organização com Agentforce, mas vamos falar sobre os diferentes tipos de agente em outro "post" - `D02`.
@@ -562,29 +561,29 @@ Visualizando seus agentes da organização:
 
 ##### Visão definição Agents
 
-![Setup > Agentforce Studio > Agentforce Agents > Tela](./imgs/D01-setup-02-AgentforceStudio-AgentforceAgents-Tela.png)
+![Setup > Agentforce Studio > Agentforce Agents > Tela](./img/D01-setup-02-AgentforceStudio-AgentforceAgents-Tela.png)
 
 <!-- >**speech:** Ao clicar em um dos agentes você terá acesso à tela de definição do Agente, que são detalhadas no momento da sua criação. Aqui escolhi um agente que tem mais de uma versão e não está ativo para destacar que as versões dos agentes não vão vistas nessa tela, e sim clicando ali no canto superior direito ou na tela anterior, entrando diretamente na versão desejada. -->
 
 Acessando a visão geral do agente - Guia **Details**:
-![Setup > Agentforce Studio > Agentforce Agents > Details](./imgs/D01-setup-03-AgentforceStudio-AgentforceAgents-Agente-Details.png)
+![Setup > Agentforce Studio > Agentforce Agents > Details](./img/D01-setup-03-AgentforceStudio-AgentforceAgents-Agente-Details.png)
 
 <!-- >**speech:** Aqui em System Messages é possível configurar mensagens de início, de erro (quando o agente tenta fazer coisas para as quais ele não está preparado), configura se você quer que o próprio ecossistema Agentforce sugira ações / interações com base no contexto da página onde o agente foi aberto.  -->
 
 Acessando a visão geral do agente - Guia **System Messages**:
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details > System Messages](./imgs/D01-setup-04-AgentforceStudio-AgentforceAgents-Agente-SystemMessages.png)
+![Setup > Agentforce Studio > Agentforce Agents > Agent Details > System Messages](./img/D01-setup-04-AgentforceStudio-AgentforceAgents-Agente-SystemMessages.png)
 
 <!-- >**speech:** Aqui em Language settings é possível configurar a linguagem do Agente e seu tom  -->
 
 Acessando a visão geral do agente - Guia **Language Settings**:
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details > Language Settings](./imgs/D01-setup-05-AgentforceStudio-AgentforceAgents-Agente-LanguageSettings.png)
+![Setup > Agentforce Studio > Agentforce Agents > Agent Details > Language Settings](./img/D01-setup-05-AgentforceStudio-AgentforceAgents-Agente-LanguageSettings.png)
 
 <!-- >**speech:** Aqui em Connections é possível xxxxx xx  -->
 
 Acessando a visão geral do agente - Guia **Connections**:
 >⚠️🔎🔎🚨🚨🚨🚨`**DÚVIDA:**` *PESQUISAR PARA QUE SERVE ESSAS CONFIGURAÇÕES - APARENTEMENTE SO SÃO ATIVADAS PARA SERVICE AGENTS*
 
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details > Connections](./imgs/D01-setup-06-AgentforceStudio-AgentforceAgents-Agente-Connections.png)
+![Setup > Agentforce Studio > Agentforce Agents > Agent Details > Connections](./img/D01-setup-06-AgentforceStudio-AgentforceAgents-Agente-Connections.png)
 ###### **Para que serve?**
 
 A aba **Connections** é um **painel de integração com canais de comunicação**. Basicamente, serve para:
@@ -761,17 +760,17 @@ Suponha que você queira criar um **Service Agent chamado "Suporte E-commerce"**
 <!-- >**speech:** Aqui em Agent Access é possível gerenciar os permission sets e profiles com acesso ao agente  -->
 
 Acessando a visão geral do agente - Guia **Agent Access**:
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details > Agent Access](./imgs/D01-setup-07-AgentforceStudio-AgentforceAgents-Agente-AgentAccess.png)
+![Setup > Agentforce Studio > Agentforce Agents > Agent Details > Agent Access](./img/D01-setup-07-AgentforceStudio-AgentforceAgents-Agente-AgentAccess.png)
 
 ##### Versões do Agent
 
 Acessível tanto pela tela principal quanto pela tela de definições do Agent.
 
 Via "Agent Details":
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details](./imgs/D01-setup-08-AgentforceStudio-AgentDetails-Versions.png)
+![Setup > Agentforce Studio > Agentforce Agents > Agent Details](./img/D01-setup-08-AgentforceStudio-AgentDetails-Versions.png)
 
 Via "Agentforce Agents":
-![Setup > Agentforce Studio > Agentforce Agents > Clica em ▽ no Agente](./imgs/D01-setup-09-AgenforceStudio-AgentforceAgents-Versions.png)
+![Setup > Agentforce Studio > Agentforce Agents > Clica em ▽ no Agente](./img/D01-setup-09-AgenforceStudio-AgentforceAgents-Versions.png)
 
 ---
 
