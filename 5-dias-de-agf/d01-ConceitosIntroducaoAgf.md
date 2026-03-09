@@ -6,7 +6,10 @@ Olá, pequeno gafanhoto. Como vai?
 <!-- previsão 16/03 a 20/03 -->
 Na semana de d1/MM/aaaa a d5/MM/aaaa, todo dia vou liberar um post sobre o novo queridinho da Salesforce: O Agentforce.
 
-![Agentforce](https://www.salesforce.com/content/dam/web/en_us/www/images/resources/services/agentforce-activator-professional-services.png)
+<center>
+<img src="https://www.salesforce.com/content/dam/web/en_us/www/images/resources/services/agentforce-activator-professional-services.png" width="30%" >
+</center>
+<br>
 
 Para vocês acompanharem melhor, os posts dessa semana serão:
 - **Dia 01 - d1/02/2026:** Conceitos de IA, Visão geral Agentforce - conceito, Visão geral Agentforce - setup (Agente);
