@@ -10,10 +10,10 @@ Na semana de d1/MM/aaaa a d5/MM/aaaa, todo dia vou liberar um post sobre o novo 
 
 Para vocês acompanharem melhor, os posts dessa semana serão:
 - **Dia 01 - d1/02/2026:** Conceitos de IA, Visão geral Agentforce - conceito, Visão geral Agentforce - setup (Agente);
-- **Dia 02 - d2/02/2026:** Tipos de agente e seu uso em canais externos, tópicos, ações e prompts (custom e standard);
-- **Dia 03 - d3/02/2026:** Automações (Flows, Apex e como usar com o Agente Agentforce), Deploy e Versionamento;
-- **Dia 04 - d4/02/2026:** Detalhamento técnico de possíveis desenhos de solução, pegadinhas e metadados;
-- **Dia 05 - d5/02/2026:** Agentforce x Data Cloud, Sales Cloud e Service Cloud + Certificação Agentforce Specialist (visão geral);
+- **Dia 02 - d2/02/2026:** Agentes Standard e seu uso em canais externos, tópicos, ações e prompts (custom e standard);
+- **Dia 03 - d3/02/2026:** Automações (Flows, Apex e como usar com o Agente Agentforce), Agentes “custom”;
+- **Dia 04 - d4/02/2026:** Agentforce x Data Cloud, Sales Cloud e Service Cloud;
+- **Dia 05 - d5/02/2026:** Monitoramento e observabilidade, Testing Center, Deploy + Certificação Agentforce Specialist (visão geral);
 
 ## D01: Introdução ao Agentforce
 
