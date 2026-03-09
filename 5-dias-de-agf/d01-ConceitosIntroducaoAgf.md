@@ -9,11 +9,11 @@ Na semana de d1/MM/aaaa a d5/MM/aaaa, todo dia vou liberar um post sobre o novo 
 ![Agentforce](https://www.salesforce.com/content/dam/web/en_us/www/images/resources/services/agentforce-activator-professional-services.png)
 
 Para vocês acompanharem melhor, os posts dessa semana serão:
-**1. Dia 01 - d1/02/2026:** Conceitos de IA, Visão geral Agentforce - conceito, Visão geral Agentforce - setup (Agente);
-**2. Dia 02 - d2/02/2026:** Tipos de agente e seu uso em canais externos, tópicos, ações e prompts (custom e standard);
-**3. Dia 03 - d3/02/2026:** Automações (Flows, Apex e como usar com o Agente Agentforce), Deploy e Versionamento;
-**4. Dia 04 - d4/02/2026:** Detalhamento técnico de possíveis desenhos de solução, pegadinhas e metadados;
-**5. Dia 05 - d5/02/2026:** Agentforce x Data Cloud, Sales Cloud e Service Cloud + Certificação Agentforce Specialist (visão geral);
+- **Dia 01 - d1/02/2026:** Conceitos de IA, Visão geral Agentforce - conceito, Visão geral Agentforce - setup (Agente);
+- **Dia 02 - d2/02/2026:** Tipos de agente e seu uso em canais externos, tópicos, ações e prompts (custom e standard);
+- **Dia 03 - d3/02/2026:** Automações (Flows, Apex e como usar com o Agente Agentforce), Deploy e Versionamento;
+- **Dia 04 - d4/02/2026:** Detalhamento técnico de possíveis desenhos de solução, pegadinhas e metadados;
+- **Dia 05 - d5/02/2026:** Agentforce x Data Cloud, Sales Cloud e Service Cloud + Certificação Agentforce Specialist (visão geral);
 
 ## D01: Introdução ao Agentforce
 
@@ -518,10 +518,11 @@ Tudo isso garantindo que:
 
 ##### Lembra dos conceitos?
 
-<div align="center">
-  <img src="./img/D01-arquit-base-Agentforce360Platform.png" width="70%" alt="Pilares Agentforce 360 Platform">
-  <p><strong>Pilares Agentforce 360 Platform</strong></p>
-</div>
+<center>
+<img src="https://media.licdn.com/dms/image/v2/D4E22AQEFofba4P-bCA/feedshare-shrink_2048_1536/B4EZRBYZSgGcAo-/0/1736263711388?e=1774483200&v=beta&t=JNljGRPUJykD44YarkaRljorftzFxn8sODYQJRiocAE" width="70%" alt="Ecossistema Agentforce e Conceitos de IA">
+<figcaption><b>Ecossistema Agentforce e Conceitos de IA</b></figcaption>
+</center>
+<br>
 
 - Chunk: Transformar um documento grande/não-estruturado em pedaços menores e gerenciáveis 
 - Embed: Transformar o texto do chunk em números (embedding) que capturam o significado semântico.
