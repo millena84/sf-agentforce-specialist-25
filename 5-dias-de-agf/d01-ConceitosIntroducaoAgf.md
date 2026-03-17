@@ -6,17 +6,14 @@ Olá, pequeno gafanhoto. Como vai?
 <!-- previsão 16/03 a 20/03 -->
 Na semana de d1/MM/aaaa a d5/MM/aaaa, todo dia vou liberar um post sobre o novo queridinho da Salesforce: O Agentforce.
 
-<center>
-<img src="https://www.salesforce.com/content/dam/web/en_us/www/images/resources/services/agentforce-activator-professional-services.png" width="30%" >
-</center>
-<br>
+![Agentforce](https://www.salesforce.com/content/dam/web/en_us/www/images/resources/services/agentforce-activator-professional-services.png)
 
 Para vocês acompanharem melhor, os posts dessa semana serão:
 - **Dia 01 - d1/02/2026:** Conceitos de IA, Visão geral Agentforce - conceito, Visão geral Agentforce - setup (Agente);
-- **Dia 02 - d2/02/2026:** Agentes Standard e seu uso em canais externos, tópicos, ações e prompts (custom e standard);
-- **Dia 03 - d3/02/2026:** Automações (Flows, Apex e como usar com o Agente Agentforce), Agentes “custom”;
-- **Dia 04 - d4/02/2026:** Agentforce x Data Cloud, Sales Cloud e Service Cloud;
-- **Dia 05 - d5/02/2026:** Monitoramento e observabilidade, Testing Center, Deploy + Certificação Agentforce Specialist (visão geral);
+- **Dia 02 - d2/02/2026:** Tipos de agente e seu uso em canais externos, tópicos, ações e prompts (custom e standard);
+- **Dia 03 - d3/02/2026:** Automações (Flows, Apex e como usar com o Agente Agentforce), Deploy e Versionamento;
+- **Dia 04 - d4/02/2026:** Detalhamento técnico de possíveis desenhos de solução, pegadinhas e metadados;
+- **Dia 05 - d5/02/2026:** Agentforce x Data Cloud, Sales Cloud e Service Cloud + Certificação Agentforce Specialist (visão geral);
 
 ## D01: Introdução ao Agentforce
 
@@ -24,14 +21,12 @@ No dia de hoje falaremos sobre:
 
 1. Conceitos de IA (visão geral)
 2. Visão geral Agentforce - conceito
-3. Visão geral Agentforce - setup
 
 ---
 
 ### 1. Conceitos de IA (visão geral)
 
 >Antes de falar do queridinho da Salesforce, vamos falar de IA / Agentes no geral e trazer alguns conceitos? Isso vai ser muito importante no uso de IA (independente do 'player'), e serão muito importantes no dia a dia de uso do Agentforce.
-
 
 Se você não está ouvindo sobre agentes, IA, LLM, SLM e afins no seu dia a dia, você só pode estar saindo de uma caverna, risos.
 Brincadeirinha hihi
@@ -45,13 +40,28 @@ A primeira pergunta a se fazer talvez seja:
 
 >"Por quê usar a inteligência artificial?"
 
-Não adianta querer usar IA só pelo hype. IA custa caro, dá trabalho e, antes de decidir por ela, vale checar se o problema realmente precisa de IA ou se uma automação/regras resolve melhor.
+A escolha do uso precisa vir muito além da modinha. Não adianta querer usar IA só pelo hype. IA custa caro, dá trabalho e, antes de decidir por ela, vale checar se o problema realmente precisa de IA ou se uma automação/regras resolve melhor.
+
+Mas existem sim algumas vantagens em usar IA para resolver um problema...
+
+1. IA aumenta a produtividade e eficiência
+   - Automatiza tarefas repetitivas (responder e‑mails, relatórios, digitação, organização de informações), liberando tempo para trabalho mais estratégico e criativo.
+   - Empresas que usam IA relatam ganhos grandes de eficiência, com automação de atividades que consomem até um tempo elevado dos funcionários.
+2. IA melhora a qualidade das decisões e dos resultados
+   - Analisa grandes volumes de dados, encontra padrões e tendências que uma pessoa sozinha não veria, ajudando a tomar decisões mais rápidas e embasadas.
+   - Em educação, por exemplo, a IA identifica dificuldades de cada aluno e sugere caminhos personalizados, elevando a qualidade do ensino.
+3. IA potencializa criatividade e personalização
+   - Ferramentas de IA generativa ajudam a ter ideias, criar rascunhos de textos, imagens, roteiros e designs, “destravando” pessoas menos criativas e elevando o nível médio de qualidade.
+   - Permite experiências personalizadas: conteúdos adaptados ao perfil do cliente ou do aluno, feedback em tempo real e materiais sob medida para cada necessidade.
+
+Não é sobre substituir pessoas, mas sobre tirar das nossas costas o trabalho repetitivo, ajudar a tomar decisões com dados e liberar espaço para aquilo que é mais humano: criatividade, relacionamento e estratégia.
 
 ##### Perguntinhas mágicas
 
 A boa notícia é que tem algumas perguntas de bolso que podem ser um guia...
 
 ###### 1.  Qual é o problema a ser resolvido?
+
    - [ ] O que está acontecendo / faltando / atrapalhando?
    - [ ] O que é almejado em relação a isso? Aqui você pode pensar nas versões 'mínima', 'ideal' e 'excelente'
    - [ ] Você consegue explicar de forma simples e didática o problema?
@@ -61,6 +71,7 @@ A boa notícia é que tem algumas perguntas de bolso que podem ser um guia...
 ---
 
 ###### 2. Quais são os dados relacionados ao problema (a FONTE DA VERDADE!)?
+
    - [ ] Eles existem?
    - [ ] Onde eles estão? (na cabeça do usuário / em sistemas externos)
    - [ ] Qual a estrutura deles?
@@ -72,6 +83,7 @@ A boa notícia é que tem algumas perguntas de bolso que podem ser um guia...
 ---
 
 ###### 3. Quais são as possíveis maneiras de se resolver o problema?
+
    - [ ] Existe uma lógica a ser seguida? Uma receita?
    - [ ] Está relacionado a tarefas bem estruturadas?
    - [ ] O que acontece se algum passo estiver incorreto?
@@ -84,12 +96,14 @@ A boa notícia é que tem algumas perguntas de bolso que podem ser um guia...
 ---
 
 ###### 4. Quão sensíveis são os dados relacionados ao problema?
+
    - [ ] Precisa de mascaramento?
    - [ ] Quem, dos stakeholders relacionados ao problema, pode ter acesso a quê?
 
 ---
 
 ###### 5. Custo x Benefício x Urgência
+
    - De tudo que foi levantado, avalie:
       - [ ] **1.** Você tem um entendimento didático e profundo sobre o problema a ser resolvido?
       - [ ] **2.** Existem dados conhecidos, acessíveis e com qualidade relacionados ao problema que podem ser usados?
@@ -365,6 +379,12 @@ A fundação (o *"chassi"*) do Agentforce executa no Data 360 (antigo Data Cloud
 - Plataforma unificada: Conecta pessoas, aplicativos, dados e agentes em um lugar só;
 - Construção por low-code: Agentforce Agents / Agentforce Builder traz um fluxo unificado para detalhamento e integração de automações;
 - Hipercontextualização: É possível, no Data 360, criar repositórios de dados (estruturados e não-estruturados) para respostas ricas;
+- Atlas reasoning engine, o cérebro do Agente (falaremos dele em instantes): Core do Agentforce, motor de raciocínio que segue um loop reason-act-learn iterativo.
+   - Reason: Analisa input (texto, eventos, dados), classifica tópicos e planeja passos usando LLM + instruções.
+   - Act: Chama ações (Flows, Apex, APIs, ferramentas externas) com function-calling estruturado.
+   - Learn: Incorpora feedback, valida resultados (grounding) e itera até resolver o objetivo ou escalar para humano.
+Diferencial: Não é um LLM solto – valida contra regras de negócio em tempo real, evitando alucinações.
+- Einstein Trust Layer fazendo a camada de segurança - também falaremos adiante.
 
 ---
 
@@ -477,39 +497,39 @@ Depois desses passos, o Trust Layer envia o prompt limpo e mascarado via **LLM G
     Importante: aqui ainda vale a política de **Zero Data Retention** — o provedor não pode reter os dados do seu prompt/resposta para treinar modelos, segundo o Trust Layer.
 10. Resposta volta pelo Einstein Trust Layer (lado RESPONSE)
     A resposta do modelo não vai direto para o usuário nem para o agente executar. Ela volta pelo **Einstein Trust Layer**, agora no fluxo de **RESPONSE**:
-11. **Zero Data Retention**
-   - Garante que o modelo (especialmente se for externo) não guarda o conteúdo para treinamento ou outros usos.
-   - É uma política técnica + contratual, controlada pelo Trust Layer.
-12. **Toxicity Detection – lado resposta**
+   1. **Zero Data Retention**
+      - Garante que o modelo (especialmente se for externo) não guarda o conteúdo para treinamento ou outros usos.
+      - É uma política técnica + contratual, controlada pelo Trust Layer.
+   2. **Toxicity Detection – lado resposta**
    - Avalia se a resposta do modelo contém linguagem tóxica, vazamento de dados, instruções perigosas etc.  
    - Se algo for detectado, a resposta pode ser bloqueada, ajustada ou substituída por uma mensagem segura.
-13. **Data Demasking**
-   - Lembra dos dados que foram mascarados no prompt?
-   - Aqui o Trust Layer **recoloca** os valores reais antes de exibir para o usuário ou antes de o agente executar uma ação.  
-   - Exemplo: o modelo responde “Atualizar o telefone do funcionário X para [PHONE_MASKED]”. O Trust Layer substitui [PHONE_MASKED] pelo telefone real que ele manteve sob controle seguro (sem mostrar ao modelo).
-14. **Audit Trail and Feedback**  
-   - Registra logs sobre a chamada: quem pediu, quando, que tipo de dado foi usado, que políticas foram aplicadas.  
-   - Pode ser usado para auditoria, explicabilidade e melhoria contínua (por exemplo, marcar respostas incorretas para refinamento).
-Só depois disso a resposta “limpa” e segura é entregue de volta à camada de agentes.
-15. Agents (Employee) executa ações: Flow, Apex, Custom Object
-    Com a resposta validada, o **Atlas Reasoning Engine**/agente usa o conteúdo para decidir **como agir**, dentro dos **tópicos e actions** configurados:
-16. Se a resposta for só informacional:  
-   - O agente formata a mensagem final e envia ao usuário.
-17. Se envolver **ação em sistemas** (seu caso típico de custom object + Flow/Apex):
-   - O plano do modelo pode ser algo como “Atualizar o campo Status__c do CustomObject__c para ‘Ativo’”.  
-   - O agente avalia quais **actions** estão disponíveis no tópico:
-     - Flow (por exemplo, “Atualizar registro de funcionário”).  
-     - Apex (ex: lógica complexa de cálculo de benefícios).  
-   - Ele então:
-     - Invoca o **Flow** adequado para atualizar o registro no custom object.  
-     - Ou chama uma **Apex Action** para lógica mais avançada.
-18. Se necessário, o agente faz round-trips adicionais:  
-   - Após executar o Flow/Apex, pode consultar novamente o custom object para verificar o resultado.  
-   - Pode fazer nova chamada ao modelo para gerar uma explicação amigável da ação tomada (“Acabei de atualizar seus dados, o novo status é X.”), novamente passando pelo Trust Layer.
-19. Usuário vê o resultado
-    Por fim, o usuário recebe:
-    - Uma resposta em linguagem natural, segura e auditável.  
-    - As atualizações realmente aplicadas nos **custom objects**, feitas via Flow/Apex e não apenas “declaradas” pelo texto do modelo.  
+   3. **Data Demasking**
+      - Lembra dos dados que foram mascarados no prompt?
+      - Aqui o Trust Layer **recoloca** os valores reais antes de exibir para o usuário ou antes de o agente executar uma ação.  
+      - Exemplo: o modelo responde “Atualizar o telefone do funcionário X para [PHONE_MASKED]”. O Trust Layer substitui [PHONE_MASKED] pelo telefone real que ele manteve sob controle seguro (sem mostrar ao modelo).
+   4. **Audit Trail and Feedback**  
+      - Registra logs sobre a chamada: quem pediu, quando, que tipo de dado foi usado, que políticas foram aplicadas.  
+      - Pode ser usado para auditoria, explicabilidade e melhoria contínua (por exemplo, marcar respostas incorretas para refinamento).
+   Só depois disso a resposta “limpa” e segura é entregue de volta à camada de agentes.
+   5. Agents (Employee) executa ações: Flow, Apex, Custom Object
+      Com a resposta validada, o **Atlas Reasoning Engine**/agente usa o conteúdo para decidir **como agir**, dentro dos **tópicos e actions** configurados:
+   6. Se a resposta for só informacional:  
+      - O agente formata a mensagem final e envia ao usuário.
+   7. Se envolver **ação em sistemas** (seu caso típico de custom object + Flow/Apex):
+      - O plano do modelo pode ser algo como “Atualizar o campo Status__c do CustomObject__c para ‘Ativo’”.  
+      - O agente avalia quais **actions** estão disponíveis no tópico:
+         - Flow (por exemplo, “Atualizar registro de funcionário”).  
+         - Apex (ex: lógica complexa de cálculo de benefícios).  
+      - Ele então:
+         - Invoca o **Flow** adequado para atualizar o registro no custom object.  
+         - Ou chama uma **Apex Action** para lógica mais avançada.
+   8. Se necessário, o agente faz round-trips adicionais:  
+      - Após executar o Flow/Apex, pode consultar novamente o custom object para verificar o resultado.  
+      - Pode fazer nova chamada ao modelo para gerar uma explicação amigável da ação tomada (“Acabei de atualizar seus dados, o novo status é X.”), novamente passando pelo Trust Layer.
+   9. Usuário vê o resultado
+      Por fim, o usuário recebe:
+      - Uma resposta em linguagem natural, segura e auditável.  
+      - As atualizações realmente aplicadas nos **custom objects**, feitas via Flow/Apex e não apenas “declaradas” pelo texto do modelo.  
 
 Tudo isso garantindo que:
 
@@ -545,241 +565,24 @@ Tudo isso garantindo que:
 
 ---
 
-### 3. Visão geral Agentforce - setup
+## Encerrando
 
-Aqui vamos mostrar estruturas do agente x onde se encontram no setup *sem explicar o que os componentes são (isso acontecerá nos próximos posts)*
+Apresentamos aqui alguns conceitos densos, falamos sobre IA, sobre agentes, sobre uma visão geral do Agentforce e como os conceitos aparecem durante o seu uso.
 
-![Componentes ecossistema Salesforce](https://www.salesforceben.com/wp-content/uploads/2024/12/image1-1.png)
+Amanhã falaremos sobre:
+- Visão geral Agentforce - componentes e setup (post), Tipos de Agentes (e seu uso em canais externos), tópicos e ações;
 
-#### Agent
-<!-- >**speech:** Esta é uma developer edition que uso para testar features do agentforce para tentar entender como as coisas se conectam de fato; Uma vez acessando o setup, considerando que sua organização está apta para usar o Agentforce (ou seja, já foi tudo habilitado), é só digitar Agent no Quick find, ou ainda no waffle menu, buscar por Agentforce studio caso você já tenha agentes ativos (não é meu caso aqui?). -->
-
-Encontrando o Agentforce studio no Setup:
-![Setup > Agentforce Studio > Agentforce Agents](./img/D01-setup-01-AgentforceStudio-AgentforceAgents.png)
-
-Obs:. futuramente será no Agentforce Builder (ainda não disponível para os reles mortais, *risos*). 
-De forma resumida, existem diversos tipos de Agentes que podem ser criados numa organização com Agentforce, mas vamos falar sobre os diferentes tipos de agente em outro "post" - `D02`.
-
-<!-- >**speech:** Aqui podemos governar todos os agentes da organização conforme podemos ver. Temos aqui as versões e quais agentes e versões estão ativos na org (ou seja, quais serão os agentes que vão responder quando o usuário clicar no bonequinho do Agentforce - caso não esteja estruturado para escolher o agente - já existem trilhas que mostram isso) -->
-Visualizando seus agentes da organização:
-
-##### Visão definição Agents
-
-![Setup > Agentforce Studio > Agentforce Agents > Tela](./img/D01-setup-02-AgentforceStudio-AgentforceAgents-Tela.png)
-
-<!-- >**speech:** Ao clicar em um dos agentes você terá acesso à tela de definição do Agente, que são detalhadas no momento da sua criação. Aqui escolhi um agente que tem mais de uma versão e não está ativo para destacar que as versões dos agentes não vão vistas nessa tela, e sim clicando ali no canto superior direito ou na tela anterior, entrando diretamente na versão desejada. -->
-
-Acessando a visão geral do agente - Guia **Details**:
-![Setup > Agentforce Studio > Agentforce Agents > Details](./img/D01-setup-03-AgentforceStudio-AgentforceAgents-Agente-Details.png)
-
-<!-- >**speech:** Aqui em System Messages é possível configurar mensagens de início, de erro (quando o agente tenta fazer coisas para as quais ele não está preparado), configura se você quer que o próprio ecossistema Agentforce sugira ações / interações com base no contexto da página onde o agente foi aberto.  -->
-
-Acessando a visão geral do agente - Guia **System Messages**:
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details > System Messages](./img/D01-setup-04-AgentforceStudio-AgentforceAgents-Agente-SystemMessages.png)
-
-<!-- >**speech:** Aqui em Language settings é possível configurar a linguagem do Agente e seu tom  -->
-
-Acessando a visão geral do agente - Guia **Language Settings**:
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details > Language Settings](./img/D01-setup-05-AgentforceStudio-AgentforceAgents-Agente-LanguageSettings.png)
-
-<!-- >**speech:** Aqui em Connections é possível xxxxx xx  -->
-
-Acessando a visão geral do agente - Guia **Connections**:
->⚠️🔎🔎🚨🚨🚨🚨`**DÚVIDA:**` *PESQUISAR PARA QUE SERVE ESSAS CONFIGURAÇÕES - APARENTEMENTE SO SÃO ATIVADAS PARA SERVICE AGENTS*
-
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details > Connections](./img/D01-setup-06-AgentforceStudio-AgentforceAgents-Agente-Connections.png)
-###### **Para que serve?**
-
-A aba **Connections** é um **painel de integração com canais de comunicação**. Basicamente, serve para:
-
-- 🗣️ Conectar o agente aos **canais por onde os clientes vão falar** com ele (chat, SMS, WhatsApp, etc.)
-- 🔄 Configurar como as **mensagens vão ser roteadas** (para qual fila, para qual agente humano se não conseguir resolver)
-- 📞 Definir **escalações** (quando o bot não conseguir resolver, conecta a um humano)
-- 🎯 **Atribuir regras de roteamento** baseado em skills (por exemplo, só agentes com knowledge de "Billing" resolvem essa classe de problema)
-
----
-
-###### **Em qual tipo de agente é usada?**
-
-| Tipo de Agente | Usa Connections? | Por quê? |
-|---|---|---|
-| **Service Agent** ✅ | **Sim** (obrigatório) | Interage com clientes externos via canais, precisa de roteamento |
-| **Employee Agent** ❌ | Não | Já está dentro do Salesforce, usada por funcionários |
-| **Customer Agent** ❌ | Não | Embutida em Experience Cloud, usuários são conhecidos |
-| **Admin Agent** ❌ | Não | Interna para administradores |
-
-**Resumo simples:** Se o agente vai receber mensagens **de clientes via WhatsApp/SMS/Chat**, precisa de Connections. Se só vai rodar dentro do Salesforce para usuários internos, não precisa.
-
----
-
-###### **Configurações possíveis**
-- **1. Channel / Canal** 📱
-   - Define por **onde os clientes vão conversar** com o agente
-   - Opções típicas:
-      - **Web Chat** (chat no seu site)
-      - **SMS** (mensagens de texto)
-      - **WhatsApp** 
-      - **Email**
-      - **Voice** (chamada de voz)
-      - **Social Media** (Facebook, Twitter)
-   - **Exemplo prático:**
-      ```
-      Service Agent: "Suporte ao Cliente"
-      ├── Channels Habilitados:
-         ├── ✅ Web Chat (site do seu e-commerce)
-         ├── ✅ WhatsApp (clientes com app da marca)
-         ├── ✅ Email
-         └── ❌ SMS (desabilitado - não usa)
-      ```
-   - **Link Salesforce:** [Enhanced Messaging Channels](https://help.salesforce.com/s/articleView?id=sf.service_cloud_channel_configuration.htm)
-- **2. Omni-Channel Queue / Fila de Roteamento** 🎯
-   - **Para onde as mensagens vão quando chegam** (qual fila, qual grupo de agentes)
-   - **Como funciona:**
-      ```
-      Cliente escreve no chat
-            ↓
-      Agente IA tenta resolver (em tempo real)
-            ↓
-      Se não conseguir resolver → entra na "Fila de Suporte Nível 2"
-                                    ↓
-                              Um agente HUMANO (supervisor, especialista)
-                              pega a conversa
-      ```
-   - **Exemplo:**
-   ```
-   Connections Configuration:
-   ├── Queue: "Support Team - Level 1"
-   └── Escalation Queue: "Support Team - Level 2 (High Priority)"
-   ```
-   - **Link Salesforce:** [Omni-Channel Queue Configuration](https://help.salesforce.com/s/articleView?id=sf.omni_channel_queues.htm)
-- **3. Skill-Based Routing / Roteamento por Skills** 🎓
-   - **Encaminha a conversa pra agentes que têm expertise no assunto**
-   - **Como funciona:**
-      ```
-         Cliente pergunta sobre: "Dúvida sobre meu pedido"
-               ↓
-         Agente IA vê: "Precisa de skill = Orders Management"
-               ↓
-         Busca na fila: Quem tem skill "Orders Management"?
-               ↓
-         Envia pra esse agente especializado
-      ```
-   - **Exemplo de Skills:**
-   ```
-      Service Agent: "Suporte Multi-Departamento"
-
-      Skills Configurados:
-      ├── Orders Management → Para consultas sobre pedidos
-      ├── Billing Support → Para dúvidas de cobrança
-      ├── Technical Support → Para problemas técnicos
-      └── Returns & Refunds → Para devoluções
-   ```
-   - **Como funciona:**
-      - Cliente: "Meu pedido não chegou"
-      - Agente IA: "Vou consultar... Ok, vejo que é sobre orders"
-      - Sistema: "Encontrei 3 agentes humanos com skill 'Orders Management'"
-      - Resultado: Escalação prioriza quem tem esse skill
-   - **Link Salesforce:** [Skill-Based Routing](https://help.salesforce.com/s/articleView?id=sf.omni_channel_routing_patterns.htm)
-- **4. Escalation Configuration / Configuração de Escalação** 🚀
-   - **Define as regras de quando e como encaminhar pra um humano**
-   - **Tipos de escalação:**
-   ```
-      ├── Time-based: "Se agente IA não resolver em 2 minutos, escala"
-      ├── Intent-based: "Se detectar frustração do cliente, escala"
-      ├── Manual: "Cliente clica em 'falar com humano'"
-      └── Condition-based: "Se for assunto '🔒 confidencial', escala direto"
-   ```
-   - **Exemplo:**
-   ```
-      Escalation Rules:
-      ├── Rule 1: Cliente diz "quero falar com alguém" → Escala já
-      ├── Rule 2: Agente IA não consegue responder 3x → Escala após 3ª tentativa
-      ├── Rule 3: Assunto é "Reclamação Formal" → Escala pra Legal Team
-      └── Rule 4: Mais de 5 min na conversa → Escala pra supervisor
-   ```
-   - **Resultado prático:**
-   ```
-      Cliente: "Isso é uma reclamação formal!"
-      Sistema: "Detectou 'Reclamação Formal' → Escalando pra fila 'Legal Team'"
-   ```
-   - **Link Salesforce:** [Escalation Rules Configuration](https://help.salesforce.com/s/articleView?id=sf.omni_channel_escalation.htm)
-- **5. Priority Rules / Regras de Prioridade** 📊
-   - **Define qual conversa atender primeiro na fila**
-   - **Exemplos:**
-   ```
-      Priority Rules na Queue:
-      ├── Priority 1: VIP Customers (resolvem em 5 minutos)
-      ├── Priority 2: Regular Customers (resolvem em 15 minutos)
-      ├── Priority 3: Churn Risk (resolvem em 10 minutos - ⚠️ importante!)
-      └── Priority 4: New Customers (resolvem em 20 minutos)
-   ```
-   - **Como funciona:**
-   ```
-      Fila com 10 conversas:
-      ├── [A] Regular customer - 3 min na fila
-      ├── [B] VIP customer - 1 min na fila ← PRIORIDADE! Atende primeiro
-      ├── [C] New customer - 2 min na fila
-      ├── [D] Churn risk - 4 min na fila ← Segundo, porque é risco
-      └── ... mais 6
-   ```
-   - **Link Salesforce:** [Queue Priority Configuration](https://help.salesforce.com/s/articleView?id=sf.omni_channel_queue_priority.htm)
-
----
-
-###### **Configuração Completa: Exemplo Real**
-
-Suponha que você queira criar um **Service Agent chamado "Suporte E-commerce"**:
-- Channels Habilitados
-   ✅ Web Chat (site: www.seusite.com.br)
-   ✅ WhatsApp (número: +55 11 9999-9999)
-   ✅ Email (suporte@empresa.com)
-
-- Primary Queue
-   - Fila: "E-commerce Support - Tier 1"
-   - Max Capacity: 15 conversas por agente
-
-- Escalation Queue  
-   - Fila: "E-commerce Support - Tier 2 (Specialists)"
-   - Trigger: Quando agente IA não conseguir resolver em 2 tentativas
-
-- Skills Assigned
-   1. Orders Management (Orders, Shipments)
-   2. Returns & Refunds (Devoluções, reembolsos)
-   3. Billing Support (Faturas, pagamentos)
-   4. Technical Support (Bugs, problemas de acesso)
-
-- Escalation Rules
-   - Se cliente pedir "falar com humano" → Escala imediatamente
-   - Se conversa > 5 minutos → Escala para especialista
-   - Se assunto = "Reclamação Formal" → Escala pra Compliance Team
-   - Se frustração detectada (palavras-chave: "ridículo", "absurdo") → Escala
-
-- Priority Rules
-   - VIP Customers: Priority 1 (atendimento < 2 min)
-   - Churn Risk: Priority 2 (atendimento < 5 min)
-   - Regular: Priority 3 (atendimento < 15 min)
-   - New: Priority 4 (atendimento < 20 min)
-
-
-<!-- >**speech:** Aqui em Agent Access é possível gerenciar os permission sets e profiles com acesso ao agente  -->
-
-Acessando a visão geral do agente - Guia **Agent Access**:
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details > Agent Access](./img/D01-setup-07-AgentforceStudio-AgentforceAgents-Agente-AgentAccess.png)
-
-##### Versões do Agent
-
-Acessível tanto pela tela principal quanto pela tela de definições do Agent.
-
-Via "Agent Details":
-![Setup > Agentforce Studio > Agentforce Agents > Agent Details](./img/D01-setup-08-AgentforceStudio-AgentDetails-Versions.png)
-
-Via "Agentforce Agents":
-![Setup > Agentforce Studio > Agentforce Agents > Clica em ▽ no Agente](./img/D01-setup-09-AgenforceStudio-AgentforceAgents-Versions.png)
 
 ---
 
 ## FONTES:
 
+- [Benefícios de IA em negócios – Harvard Business School Online](https://online.hbs.edu/blog/post/benefits-of-ai-in-business)  
+- [Benefícios de IA para empresas – IBM](https://www.ibm.com/think/insights/ai-for-business-benefits)  
+- [IA em negócios (casos de uso) – IBM](https://www.ibm.com/think/topics/artificial-intelligence-business)  
+- [Impacto da IA generativa em produtividade e criatividade – USC Annenberg](https://annenberg.usc.edu/research/center-public-relations/usc-annenberg-relevance-report/ai-productivity-and-creativity)  
+- [IA em educação – UNESCO](https://www.unesco.org/en/digital-education/artificial-intelligence)  
+- [Benefícios da IA na educação – Globsyn Business School](https://www.globsyn.edu.in/blog/role-and-benefits-of-ai-in-education)  
 - https://www.geeksforgeeks.org/artificial-intelligence/state-space-search-in-ai/
 - https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/jumpstart-foundation-models-fine-tuning-domain-adaptation.html
 - https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/jumpstart-foundation-models-customize.html
